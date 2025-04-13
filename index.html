@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Salut Clicker - L'Éveil par le Clic</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Lien vers Font Awesome pour les icônes -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+  <div class="main-content">
+    <h1>Salut Clicker</h1>
+    <div id="salutCount">Saluts : 0</div>
+    
+    <!-- Conteneur pour les boutons -->
+    <div class="button-container">
+      <button id="clickButton">Salut !</button>  <!-- Bouton de clic -->
+      <button id="muteBtn">
+        <i class="fas fa-volume-up"></i>  <!-- Icône de volume activé au départ -->
+      </button> <!-- Bouton Mute/Unmute -->
+    </div>
+
+    <div class="shop">
+      <h2>Magasin</h2>
+      <div class="upgrade">
+        <strong>Langue du Chat Galactique</strong><br>
+        <span id="clickPowerInfo">+1 Salut/clic — Coût : 50</span><br>
+        <button onclick="buyUpgrade('clickPower')">Acheter</button>
+      </div>
+      <div class="upgrade">
+        <strong>Moine du Salut</strong><br>
+        <span id="autoInfo">+1 Salut/sec — Coût : 100</span><br>
+        <button onclick="buyUpgrade('auto')">Acheter</button>
+      </div>
+      <div class="upgrade">
+        <strong>Serveur Mystique</strong><br>
+        <span id="doubleClickInfo">×2 clics — Coût : 250</span><br>
+        <button onclick="buyUpgrade('doubleClick')">Acheter</button>
+      </div>
+    </div>
+
+    <button id="resetBtn" onclick="resetGame()">Réinitialiser le jeu</button>
+  </div>
+
+  <!-- Musique de fond -->
+  <audio id="backgroundMusic" loop>
+    <source src="audio/music1.mp3" type="audio/mp3">
+    Votre navigateur ne prend pas en charge l'élément audio.
+  </audio>
+
+  <audio id="clickSound" src="https://www.soundjay.com/button/beep-07.wav" preload="auto"></audio>
+  <audio id="upgradeSound" src="audio/award.mp3" preload="auto"></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
